@@ -1,0 +1,26 @@
+{
+  "name": "recipeapp",
+  "version": "1.0.0",
+  "description": "An APP for all the delicious recipes created with React",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilvenLEAF/RecipeAPP.git"
+  },
+  "keywords": [
+    "Food",
+    "Recipe"
+  ],
+  "author": "SilvenLEAF",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SilvenLEAF/RecipeAPP/issues"
+  },
+  "homepage": "https://github.com/SilvenLEAF/RecipeAPP#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
