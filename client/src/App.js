@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div id="myWrapper">
-          <Navbar/>
+          
           <Switch>
             <Route exact path="/" component={Home} />
           </Switch>
