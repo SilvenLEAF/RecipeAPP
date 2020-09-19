@@ -1,6 +1,6 @@
 import M from 'materialize-css'
 
-import Secret from '../../secrets/Secret'
+import { SPOONACULAR_API_KEY } from '../../secrets/Secret'
 
 import React, { useEffect, useState } from 'react'
 
@@ -12,10 +12,17 @@ function SearchQuery() {
   
 
   const [query, setQuery] = useState('');
+  const [searchedRecipies, setSearchedRecipies] = useState('');
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault();
-    console.log(Secret)
+    
+    const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${SPOONACULAR_API_KEY}&query=${query}`);
+
+    const data = await res.json();
+
+    setSearchedRecipies(data)
+    console.log(data);
   }
   
   
@@ -24,7 +31,7 @@ function SearchQuery() {
     <div className="container">
       <form onSubmit={ handleSubmit } >
         <div className="input-field">
-          <input type="text" value={ query } />
+          <input type="text" value={ query } onChange={ e => setQuery(e.target.value) } />
           <label htmlFor="query">Search by Query</label>
         </div>
 
@@ -32,6 +39,9 @@ function SearchQuery() {
           <button className="btn waves-effect waves-light blue" type="submit">Search</button>
         </div>
       </form>
+
+      
+
     </div>
   )
 }
