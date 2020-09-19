@@ -1,4 +1,7 @@
 import M from 'materialize-css'
+
+import Secret from '../../secrets/Secret'
+
 import React, { useEffect, useState } from 'react'
 
 function SearchQuery() {
@@ -10,7 +13,10 @@ function SearchQuery() {
 
   const [query, setQuery] = useState('');
 
-
+  handleSubmit = (e)=>{
+    console.log('hi')
+  }
+  
   
 
   return (
