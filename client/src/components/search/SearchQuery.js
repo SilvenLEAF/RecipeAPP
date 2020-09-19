@@ -13,15 +13,16 @@ function SearchQuery() {
 
   const [query, setQuery] = useState('');
 
-  handleSubmit = (e)=>{
-    console.log('hi')
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    console.log(Secret)
   }
   
   
 
   return (
     <div className="container">
-      <form>
+      <form onSubmit={ handleSubmit } >
         <div className="input-field">
           <input type="text" value={ query } />
           <label htmlFor="query">Search by Query</label>
