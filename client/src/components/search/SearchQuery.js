@@ -6,8 +6,12 @@ function SearchQuery() {
     M.AutoInit()
   }, [])
 
+  
+
   const [query, setQuery] = useState('');
 
+
+  
 
   return (
     <div className="container">
