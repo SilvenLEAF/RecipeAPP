@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 import Home from './components/home/Home'
+import SearchQuery from './components/search/SearchQuery';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/search" component={SearchQuery} />
           </Switch>
           
         </div>
