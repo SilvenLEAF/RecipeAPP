@@ -298,6 +298,10 @@ ul.sidenav {
 
 
 //---------------------TABS
+ul.tabs {
+  margin-bottom: 30px;
+}
+
 .tabs .tab a, .tabs .tab a:focus, .tabs .tab a:focus {
   background: $bodyBG !important;
   color: $themeColor !important;
@@ -307,7 +311,7 @@ ul.sidenav {
   color: #fff !important;
 }
 .tabs .indicator {
-   background-color: #000 !important;
+   background-color: darken($color: $themeColor, $amount: 10) !important;
 }
 
 

@@ -1,10 +1,31 @@
-import React from 'react'
 import '../../styles/Form.scss'
 
+
+import React from 'react'
+import { useHistory } from 'react-router-dom'
+
+
+
+
+
+
+
 function CuisineSearch() {
+  const history = useHistory();
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+
+    history.push('/searchResults')
+  }
+
+
+
+
+
   return (
     <>
-      <form>        
+      <form onSubmit={ handleSubmit } >
         <div className="input-field">
           <i className="prefix fa fa-edit"></i>
           <input type="text" required/>

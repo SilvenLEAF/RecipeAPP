@@ -13,6 +13,8 @@ import Profile from '../components/profile/Profile';
 import Contact from '../components/contact/Contact';
 import UserList from '../components/profile/UserList';
 import UpdateProfile from '../components/profile/UpdateProfile';
+import Search from '../components/search/Search';
+import SearchResults from '../components/search/SearchResults';
 
 
 
@@ -33,6 +35,11 @@ function Wrapper() {
       <Route path="/updateProfile" component={UpdateProfile} />
       <Route path="/allUsers" component={UserList} />
       <Route path="/contact" component={Contact} />
+      
+      
+      
+      <Route path="/search" component={Search} />
+      <Route path="/searchResults" component={SearchResults} />
 
 
 
