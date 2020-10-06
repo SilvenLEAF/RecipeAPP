@@ -1,22 +1,36 @@
 import '../../styles/Form.scss'
 
 
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
 
+import { SPOONACULAR_API_KEY } from '../../secrets/Secrets'
+import { SearchContext } from '../../contexts/subContexts/SearchContext';
 
 
 
 
 function CuisineSearch() {
+  const { setSearchResults } = useContext(SearchContext)
   const history = useHistory();
 
-  const handleSubmit = (e)=>{
+  const [cuisine, setCuisine] = useState('');
+
+
+
+
+  const handleSubmit = async (e)=>{
     e.preventDefault();
 
-    history.push('/searchResults')
+    const recipeRes = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${ SPOONACULAR_API_KEY }&cuisine=${ cuisine }`);
+    const recipeData = await recipeRes.json();
+
+    console.log(recipeData.results);
+    
+    setSearchResults(recipeData.results);
+    history.push('/searchResults');
   }
 
 
@@ -28,8 +42,8 @@ function CuisineSearch() {
       <form onSubmit={ handleSubmit } >
         <div className="input-field">
           <i className="prefix fa fa-edit"></i>
-          <input type="text" required/>
-          <label htmlFor="query">Cuisine <span className="red-text">(e.g. Japanese, French..etc) </span> </label>
+          <input type="text" value={ cuisine } onChange={ e=> setCuisine(e.target.value) } required />
+          <label htmlFor="query">Cuisine <span className="red-text">(e.g. Japanese etc) </span> </label>
         </div>
 
         <div className="input-field right-align">

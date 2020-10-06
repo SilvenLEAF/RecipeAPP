@@ -1,12 +1,12 @@
 import React from 'react'
 
-function SearchResultItem() {
+function SearchResultItem({ item }) {
   return (
     <li>
-    <div className="myUserProfileIcon" style={{background: `url(/Logo.png) center/cover` }}></div>
+    <div className="myUserProfileIcon" style={{background: `url(${ item.image }) center/cover` }}></div>
     <div>
       <div className="myUserName">
-        Italian Burger Pizza
+        { item.title }
       </div>
 
       {/* <p className="grey-text">

@@ -50,7 +50,7 @@ function SearchResults() {
           searchResults[0] && searchResults.map((item, index)=>{
             return (
               <Link to={ "/searchResults/" + index } key={ index } >
-                <SearchResultItem/>
+                <SearchResultItem item={ item } />
               </Link>
             )
           })

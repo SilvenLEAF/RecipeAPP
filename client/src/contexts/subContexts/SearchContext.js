@@ -8,7 +8,7 @@ export const SearchContext = createContext();
 
 function SearchContextProvider({ children }) {
 
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([5,6,7])
 
 
   return (
