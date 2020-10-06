@@ -5,7 +5,7 @@ import React, { useEffect, useContext, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/subContexts/AuthContext'
-// import { searchResultsContext } from '../../contexts/subContexts/searchResultsContext'
+import { SearchContext } from '../../contexts/subContexts/SearchContext'
 
 
 
@@ -29,8 +29,8 @@ function SearchResults() {
 
 
   const { userData, setUserData } = useContext(AuthContext)
-  // const { searchResults, setSearchResults } = useContext(searchResultsContext)
-  const [searchResults, setSearchResults] = useState([1,2,3,4,5,6,7,8,9])
+  const { searchResults, setSearchResults } = useContext(SearchContext)
+  
   const history = useHistory()
   
 

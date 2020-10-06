@@ -1,11 +1,14 @@
 import React from 'react'
 import AuthContextProvider from './subContexts/AuthContext'
+import SearchContextProvider from './subContexts/SearchContext'
 
 function RootContext({ children }) {
   return (
     <>
       <AuthContextProvider>
-        { children }
+        <SearchContextProvider>
+          { children }
+        </SearchContextProvider>
       </AuthContextProvider>
     </>
   )
